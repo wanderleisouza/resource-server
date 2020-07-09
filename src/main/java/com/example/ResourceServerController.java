@@ -1,5 +1,7 @@
 package com.example;
 
+import java.security.Principal;
+
 import javax.annotation.security.RolesAllowed;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,4 +21,10 @@ public class ResourceServerController {
 		return "This is a protected resource";
 	}
 
+	@GetMapping("/whoAmI")
+	public String me(Principal principal) {
+		var username = principal.getName();
+		return username.concat("@").concat("clientId");
+	}
+	
 }
