@@ -27,7 +27,7 @@ public class ResourceServerController {
 		SimpleKeycloakAccount details = (SimpleKeycloakAccount)authentication.getDetails();
 		String resourceName = details.getKeycloakSecurityContext().getDeployment().getResourceName();
 		String issuedFor = details.getKeycloakSecurityContext().getToken().getIssuedFor();
-		return userName.concat(" at ").concat(resourceName).concat(", token issued for: ").concat(issuedFor);
+		return userName.concat(" at ").concat(resourceName).concat(", token issued for ").concat(issuedFor);
 	}
 	
 }
