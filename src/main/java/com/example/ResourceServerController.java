@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ResourceServerController {
 
-	@GetMapping("/public")
-	public String getPublicResource() {
-		return "This is a public resource";
+	@GetMapping("/hello")
+	public String getHello() {
+		return "hello";
 	}
 
 	@RolesAllowed("admin")
-	@GetMapping("/admin")
-	public String getProtectedResource() {
-		return "This is a protected resource";
+	@GetMapping("/goodbye")
+	public String getGoodbye() {
+		return "goodbye";
 	}
 
 	@GetMapping("/userinfo")
