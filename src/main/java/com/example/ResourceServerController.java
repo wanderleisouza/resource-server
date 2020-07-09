@@ -21,12 +21,12 @@ public class ResourceServerController {
 		return "goodbye";
 	}
 
-	@GetMapping("/userinfo")
+	@GetMapping("/trace")
 	public String me(Authentication authentication) {
-		var username = authentication.getName();
+		var userName = authentication.getName();
 		SimpleKeycloakAccount details = (SimpleKeycloakAccount)authentication.getDetails();
-		String clientId = details.getKeycloakSecurityContext().getDeployment().getResourceName();
-		return username.concat("@").concat(clientId);
+		String resourceName = details.getKeycloakSecurityContext().getDeployment().getResourceName();
+		return userName.concat("@").concat(resourceName);
 	}
 	
 }
