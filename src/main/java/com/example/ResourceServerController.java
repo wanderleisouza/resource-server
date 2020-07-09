@@ -1,9 +1,9 @@
 package com.example;
 
-import java.security.Principal;
-
 import javax.annotation.security.RolesAllowed;
 
+import org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,15 +16,17 @@ public class ResourceServerController {
 	}
 
 	@RolesAllowed("admin")
-	@GetMapping("/protected")
+	@GetMapping("/admin")
 	public String getProtectedResource() {
 		return "This is a protected resource";
 	}
 
-	@GetMapping("/whoAmI")
-	public String me(Principal principal) {
-		var username = principal.getName();
-		return username.concat("@").concat("clientId");
+	@GetMapping("/userinfo")
+	public String me(Authentication authentication) {
+		var username = authentication.getName();
+		SimpleKeycloakAccount details = (SimpleKeycloakAccount)authentication.getDetails();
+		String clientId = details.getKeycloakSecurityContext().getDeployment().getResourceName();
+		return username.concat("@").concat(clientId);
 	}
 	
 }
