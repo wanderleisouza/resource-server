@@ -11,13 +11,13 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>resource-server</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>resource-server</name>
-	<description>Project Example</description>
+	<version>1.0-SNAPSHOT</version>
 
 	<properties>
 		<java.version>11</java.version>
 		<keycloak.version>10.0.2</keycloak.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>		
+		<spring-cloud.version>Hoxton.SR5</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -34,18 +34,42 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-new-relic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.newrelic.agent.java</groupId>
+			<artifactId>newrelic-api</artifactId>
+			<version>5.6.0</version>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.keycloak.bom</groupId>
 				<artifactId>keycloak-adapter-bom</artifactId>
@@ -61,6 +85,30 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>1.5.0</version>
+				<configuration>
+					<from>
+						<image>gcr.io/distroless/java:11</image>
+					</from>
+					<to>
+						<image>${docker.name}</image>
+					</to>
+					<container>
+						<environment>
+							<_JAVA_OPTIONS>'-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005'</_JAVA_OPTIONS>
+						</environment>
+						<ports>
+							<port>8080</port>
+							<port>5005</port>
+						</ports>
+						<!-- Jib strips timestamps in order to maintain reproducibility; you 
+							can bypass this behavior removing by setting creationTime <creationTime>USE_CURRENT_TIMESTAMP</creationTime> -->
+					</container>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
