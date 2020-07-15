@@ -62,14 +62,14 @@
 			"response": []
 		},
 		{
-			"name": "/customers/jane-doe",
+			"name": "/customers/john-doe",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJIUUREWGVnaU4zWXZfYUg4SW5xbC14NzJOU1VQbGVZQ0c5RWFtdm9tbEg0In0.eyJleHAiOjE1OTQ4MzE0MDMsImlhdCI6MTU5NDgzMTEwMywianRpIjoiNDgxZjI5NzAtNTRlYi00NTlhLThmZjMtNDFjNWI3YjM2MmE3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MTkxL2F1dGgvcmVhbG1zL215LXJlYWxtIiwic3ViIjoiNThhNGFkNTItYWJlNy00MjFmLTk1ZTEtODA4NzZjYjUzODgzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYXBwLWFuZHJvaWQiLCJzZXNzaW9uX3N0YXRlIjoiYmY3MzMyYzEtODg0Yy00MWI1LThkMjMtYWQ5NTQxNDEwMDRlIiwiYWNyIjoiMSIsInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiam9obi1kb2UiLCJlbWFpbCI6ImpvaG4tZG9lQG1haWxzZXJ2ZXIuY29tIn0.Tlz_NrIHu0hALVXDrlERdnaoitO-Wt25yYASrnCWpbF3pnETC2s7oZivzVvu1Vk0negLj4e6OPRhQx9NH1LdDyigMCrsWLyeJZiecM35LKWK_489J1ZGX1gncMLoRy4av33z-4OQ5PqtqKHAL1B8TGT3BEnMvGD3Ew3odaqyhLrpaozlP8Hm6Dsk7YjzCCggizMMbWe3p4RX3tZzflDTzmxJJC-6QvKzawKwjkqk09jC_HaaRF0O0LTErIbjtL5ex0KXKwTh9sPCHHPLvYMjlT1EFL9qyTuLxlYizbLX2Hi5qdesK1r74xkuytgVY-0cZ20S5QwGq9IMDUd2UFYYqg",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJIUUREWGVnaU4zWXZfYUg4SW5xbC14NzJOU1VQbGVZQ0c5RWFtdm9tbEg0In0.eyJleHAiOjE1OTQ4MzE4ODksImlhdCI6MTU5NDgzMTU4OSwianRpIjoiMTI4ZTFiZjAtNjIwMC00NWY1LWE3MjgtOTg2YmMzMTQ3Mjk3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MTkxL2F1dGgvcmVhbG1zL215LXJlYWxtIiwic3ViIjoiNThhNGFkNTItYWJlNy00MjFmLTk1ZTEtODA4NzZjYjUzODgzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYXBwLWFuZHJvaWQiLCJzZXNzaW9uX3N0YXRlIjoiYzg4MWZmZTQtYjU1Ni00MjMxLWFmMGItN2JjOGZkMzVkZDY2IiwiYWNyIjoiMSIsInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiam9obi1kb2UiLCJlbWFpbCI6ImpvaG4tZG9lQG1haWxzZXJ2ZXIuY29tIn0.O2Axpzgy1_iXzI0hJ41-vN5yLZCAvZ_wkEy14aMGRIvB8vcTwNLLhHG75pzv_Nqy6mwkAD8xKX1P79jf3uhEaQwKQ28lkRpedqfMsB20p2Y3sJ0o5Cd1_MozJqvfuE-YIpMkEnLTXGuTldBMw2hXOHcU8ctJThLN0rUUVsAJ_msnY0fOsVR6WYaLDuT95-UdhrtK1eVl5GDWJF3aslj8A7830l7jBK9AVvpi6N-R6QDAGLlLKbETeqc4KEYRHrTyRW-O_kfbXtTrom0YU4ZiCZCP_nL9RT852IM_A4a2NUDJH_semPaVAZmC82j6xpYJD1u_uMzozAtRJXJS_iSybQ",
 							"type": "string"
 						}
 					]
@@ -77,14 +77,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/customers/jane-doe",
+					"raw": "localhost:8080/customers/john-doe",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"customers",
-						"jane-doe"
+						"john-doe"
 					]
 				}
 			},

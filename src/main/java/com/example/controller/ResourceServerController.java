@@ -28,7 +28,7 @@ public class ResourceServerController {
 		return "goodbye";
 	}
 
-	@PostAuthorize("returnObject.name == authentication.name")
+	@PostAuthorize("(returnObject.name == authentication.name) or hasRole('admin')")
 	@GetMapping("/customers/{username}")
 	public Customer getCustomer(@PathVariable final String username) {
 		return customerService.findByUsername(username);
