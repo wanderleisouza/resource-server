@@ -16,6 +16,11 @@ public class ResourceServerController {
 	
 	@Autowired
 	CustomerService customerService;
+	
+	@GetMapping("/")
+	public String getWelcome() {
+		return "welcome";
+	}
 
 	@GetMapping("/hello")
 	public String getHello() {
