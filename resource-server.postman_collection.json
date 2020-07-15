@@ -6,6 +6,34 @@
 	},
 	"item": [
 		{
+			"name": "/ (welcome)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1NnFKTVdPTy1MS1lqeFRKSDV1M3VLdXlKX0dUZTB5T0M4eTk5S3NoSDlVIn0.eyJleHAiOjE1OTQ4NTI4NDksImlhdCI6MTU5NDg1MjU0OSwianRpIjoiYmMwNjZlN2QtZTk0MC00MGZkLTgxMTQtYjUxOTkxZjA0MDJiIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MTkxL2F1dGgvcmVhbG1zL215LXJlYWxtIiwic3ViIjoiYjM2MDQxMzItODYzNi00YjAyLTgzMGMtNWI5ZTVmNjkyMTdlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYXBwLWFuZHJvaWQiLCJzZXNzaW9uX3N0YXRlIjoiM2JhZjQwNGItNTM1YS00MDg1LWIyYTctMzE2OWUwNDZiMmNmIiwiYWNyIjoiMSIsInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiamFuZS1kb2UiLCJlbWFpbCI6ImphbmUtZG9lQG1haWxzZXJ2ZXIuY29tIn0.XCLTW8euMro-nP_gM54Lf3oiyzlrceb_8-wjooRlnrPkr9b5afyUj7yxuUA078Cbw-AiV-SWr1nC6qrxmCyQUIXYFmfWlA44uTKJ1UL9ZL55ohp7f5CxzDVaQD-A9ppuX1g5PSP6erdn9LT2OynLpfstos5pu5wDQpGGSZCGH5xMzC3pyse_DfTEJGipzW1MblYkdCITG-6g2nbyI7MCvqH4aEzVWiz1WXPMBeK-Cc-3BZwhQHBLrhrqgK6qq_U7jWsqX5LwERIrSgQb0V3yRmwFWViFqPNZmUnG9as3yEQHfRfcNuHTWQwCr_qWxpCYnnw11c-YXKhoj4oBOwQ0ag",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "/hello",
 			"request": {
 				"auth": {
