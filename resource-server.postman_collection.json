@@ -6,6 +6,28 @@
 	},
 	"item": [
 		{
+			"name": "/actuator/health",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator/health",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "/ (welcome)",
 			"request": {
 				"auth": {
