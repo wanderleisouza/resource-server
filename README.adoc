@@ -1,0 +1,72 @@
+= My commands sheet
+:toc:
+
+== Getting started 
+
+=== Install Java 11
+
+	brew tap AdoptOpenJDK/openjdk
+	brew cask install adoptopenjdk11
+	which java
+	
+=== Instal Maven3
+
+ 	brew install maven
+ 	mvn --version
+	
+=== Install Docker Desktop for Mac
+
+https://docs.docker.com/docker-for-mac/install/ 
+
+Verify docker installation
+ 
+	docker -v
+
+=== (Optional) SpringToolSuite4/Eclipse Plugins
+
+https://marketplace.eclipse.org/content/asciidoctor-editor
+
+https://marketplace.eclipse.org/content/yaml-editor
+
+http://marketplace.eclipse.org/content/eclipse-docker-tooling +
+To activate: Window > Show View > Other... (Docker Explorer)
+
+=== (Optional) Install pjson
+
+Install pygments and xmlformatter
+
+	pip install pjson xmlformatter
+
+=== Install Lombok
+
+download available from: https://projectlombok.org
+
+	java -jar lombok.jar
+
+
+== Build and Test using Maven
+
+. Run application:
+
+	mvn spring-boot:run -Dspring.cloud.config.uri=http://localhost:8888
+
+. Test application
+
+	curl -s localhost:8080/actuator/health | pjson
+	
+== Jib builder and run using a Docker image
+
+
+. To create the image, Jib can use the *local* Docker daemon
+
+	mvn clean package jib:dockerBuild -Dimage=examples/resource-server
+	
+	docker run --env spring.profiles.active=dev --env spring.cloud.config.uri=http://host.docker.internal:8888 -p 8080:8080 examples/customer
+	
+TIP: => *jib:build* builds to a container image registry +
+=> to run in the foreground, remove *-d* (--detach) option
+	 
+
+. Test application
+
+	curl -s localhost:8080/actuator/health | pjson	
